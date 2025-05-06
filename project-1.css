@@ -38,6 +38,7 @@ nav ul a {
 
 .al{
     justify-content: center;
+    
 }
 
 .navigation{
@@ -52,15 +53,17 @@ nav ul a {
 
 .header2 {
     display: flex;
-    background:white;
+    background:rgb(252, 204, 117);
     padding: 10px;
     box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
+    
 }
 .header2 a{
     padding: 8px;
     font-size: 17px;
-    color:rgb(193, 110, 23);
+    color:rgb(14, 12, 10);
     font-weight: bold;
+    
 }
 .navigation3{
         display: flex;
@@ -73,3 +76,17 @@ nav ul a {
     flex:6;
     padding-top: 16px;
 }
+.login-btn {
+    padding: 8px 16px;
+    background-color: black;
+    color: white;           
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #333; 
+  }
