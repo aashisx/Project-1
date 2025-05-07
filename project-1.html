@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project-1</title>
     <link rel="stylesheet" href="project-1.css">
+    <script  type="text/javascript "src="project1.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
 </head>
 <body>
     <body>
@@ -47,15 +51,23 @@
                     </ul>
                 </nav>
             </div>
-        </div>
         <div class="nav-right">
             <button class="login-btn">Login</button>
           </div>
 
         </div>
-    <div></div>
-    <div>
+        <div class="search-bar">
+            <div class="search-section">
+              <i class="fa fa-search"></i>
+              <input type="text" placeholder="Where are you going?" />
+            </div>
+            <div class="search-section">
+              <i class="fa fa-calendar"></i>
+              <input type="text" placeholder="Select your dates"  id="datepicker"/>
+            </div>
+            <button>Search</button>
+          </div>
+        </div>
         
-    </div>
 </body>
 </html>
