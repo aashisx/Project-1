@@ -6,52 +6,20 @@
 html,
 body {
     font-family: "Roboto", sans-serif;
+
 }
-nav ul {
+/*CSS for Navigation bar*/
+ .header2 nav ul {
     display: flex;
     list-style: none;
     flex-direction: row;
     margin-bottom: 31px;
+    justify-content: center;
 }
 
 nav ul a {
     text-decoration: none;
 }
-
-
-.header {
-    display: flex;
-    background: #3838c9;
-    padding: 10px;
-    border-radius: 10px;
-}
-.header a{
-    padding: 8px;
-    font-size: 14px;
-    color:white;
-
-
-}
-.header a:hover{
-    color: rgb(6, 165, 6);
-}
-
-
-.al{
-    justify-content: center;
-    
-}
-
-.navigation{
-    margin-left: 150px;
-    flex:3;
-
-}
-.navigation1{
-    margin-left: 155px;
-    flex:6;
-}
-
 .header2 {
     display: flex;
     background:rgb(252, 204, 117);
@@ -138,3 +106,59 @@ nav ul a {
   .search-bar button:hover {
     background-color: #005fa3;
   }
+
+
+  /*Css  for footer starts here*/
+  .footer {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 100px; /*remove this margin to avoid space on the top of footer after completing body parts*/
+  }
+  .basic{
+    display: flex;
+    flex:1;
+    flex-direction: column ;
+  }
+  .social{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  }
+  .services{
+    display: flex;
+    flex-direction: column;
+    flex:3;
+  }
+  .Quick-links{
+    display: flex;
+    flex-direction: column;
+    flex: 1.5;
+  }
+  .footer-navigation nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+  }
+  .footer-navigation2 nav ul,
+.footer-navigation3 nav ul,
+.footer-navigation4 nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.footer-navigation2 nav ul a,
+.footer-navigation3 nav ul a, .footer-navigation4 nav ul a {
+    color: black;
+    font-size: 15px;
+    padding: 3px;
+    font-family: cursive;
+    display: inline-block;
+    transition: color 0.2s ease , transform 0.2s ease;
+}
+.footer-navigation2 nav ul a:hover,
+.footer-navigation3 nav ul a:hover, .footer-navigation4 nav ul a:hover {
+    color:rgb(8, 8, 197);
+    transform: scale(1.1);
+}
