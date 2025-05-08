@@ -46,6 +46,9 @@ nav ul a {
     flex:6;
     padding-top: 16px;
 }
+.image img{
+  border-radius: 12px;
+}
 .login-btn {
     padding: 8px 16px;
     background-color: black;
@@ -129,12 +132,31 @@ nav ul a {
   .services{
     display: flex;
     flex-direction: column;
-    flex:3;
+    flex:2;
   }
   .Quick-links{
     display: flex;
     flex-direction: column;
     flex: 1.5;
+  }
+  .vehicles{
+    display:flex;
+    flex-direction: column;
+    flex:3;
+  }
+  .cars-1{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    
+  }
+
+  .Economy{
+    margin-left: 40px;
+  }
+  .vehicles h2{
+    text-align: center;
+    margin-right: 218px;
   }
   .footer-navigation nav ul {
     display: flex;
@@ -143,22 +165,22 @@ nav ul a {
   }
   .footer-navigation2 nav ul,
 .footer-navigation3 nav ul,
-.footer-navigation4 nav ul {
+.footer-navigation4 nav ul,.vehicles nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 .footer-navigation2 nav ul a,
-.footer-navigation3 nav ul a, .footer-navigation4 nav ul a {
+.footer-navigation3 nav ul a, .footer-navigation4 nav ul a , .vehicles nav ul a{
     color: black;
     font-size: 15px;
-    padding: 3px;
+    padding: 1px;
     font-family: cursive;
     display: inline-block;
     transition: color 0.2s ease , transform 0.2s ease;
 }
 .footer-navigation2 nav ul a:hover,
-.footer-navigation3 nav ul a:hover, .footer-navigation4 nav ul a:hover {
+.footer-navigation3 nav ul a:hover, .footer-navigation4 nav ul a:hover, .vehicles nav ul a:hover {
     color:rgb(8, 8, 197);
     transform: scale(1.1);
 }
