@@ -113,14 +113,45 @@ nav ul a {
 
 /* css for main body section starts here*/
 
-.main-content{
-    display: flex;
-  flex-wrap: wrap;
-  gap: 45px;
-  justify-content: center;
-  max-width: 1100px;
-  margin: 50px auto;
+
+.container{
+  margin-left:164px;
+  margin-bottom: 80px;
 }
+.container h2{
+      padding: 5px;
+    font-weight: bolder;
+    font-size: 50px;
+        font-family: system-ui
+}
+.container  h2 span{
+  font-size:80px;
+}
+.container h2 p{
+  margin-top: -31px;;
+}
+.container p1{
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: cursive;
+}
+.start-btn{
+  margin-top: 20px;
+}
+.btn-st{
+  background-color: #1d83d0;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color, transform 0.3s ease;
+}
+.btn-st:hover{
+ transform: scale(1.1);
+  background-color: #04558e;
+}
+
 .text-wrap {
     background-color:#1d83d0;
     padding: 5px;
@@ -144,6 +175,15 @@ nav ul a {
 
 /*css for service cards starts here*/
 
+
+.main-content{
+    display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 50px auto;
+}
 .service-card {
     flex: 0 0 320px;
     transition: all 0.4s ease;
