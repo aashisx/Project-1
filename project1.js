@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isExpanded) {
         allItems.forEach((item) => {
           if (item !== currentItem) {
-            item.classList.add("hidden"); // Hide other items
+            item.classList.add("hidden"); // Shrink other items
+            item.classList.remove("expanded"); // Ensure they are not expanded
           } else {
+            item.classList.remove("hidden"); // Remove hidden class
             item.classList.add("expanded"); // Expand the current item
-            item.querySelector(".card").classList.add("expanded"); // Show expanded content
           }
         });
       } else {
         allItems.forEach((item) => {
-          item.classList.remove("hidden", "expanded");
-          item.querySelector(".card").classList.remove("expanded");
+          item.classList.remove("hidden", "expanded"); // Reset all cards
         });
       }
     });

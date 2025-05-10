@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -141,8 +140,13 @@ nav ul a {
     font-size: 50px;
 }
   
+
+
+/*css for service cards starts here*/
+
 .service-card {
     flex: 0 0 320px;
+    transition: all 0.4s ease;
   
 
 }
@@ -186,17 +190,19 @@ nav ul a {
   transform: scale(1.1);
 }
 
-.service-card.expanded {
-  flex: 0 0 100%;
-}
 
+
+.service-card.expanded {
+  flex: 1 1 100%;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
 .service-card.expanded .card {
   width: 100%;
   max-width: 100%;
   height: auto;
   transform: scale(1.02);
   transition: all 0.4s ease;
-  z-index: 1;
 }
 
 .card .more-info {
@@ -204,14 +210,21 @@ nav ul a {
   transition: opacity 0.4s ease;
 }
 
-.card.expanded .short-description {
+.service-card.expanded .short-description {
   display: none;
 }
 
-.card.expanded .more-info {
+.service-card.expanded .more-info {
   display: block;
     opacity: 1;
-  transition: opacity 0.4s ease;
+    transition: o.4s ease;
+
+}
+.service-card.hidden{
+    transform:scale(0.8);
+    transition: all 0.4s ease;
+    margin: -27px;
+    pointer-events: auto;
 
 }
 
