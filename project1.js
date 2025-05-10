@@ -1,12 +1,26 @@
 jQuery(document).ready(function ($) {
     $('#datepicker').datepicker();
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".expand-btn");
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const currentItem = btn.closest(".service-card");
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceCards = document.querySelectorAll(".service-card");
+  serviceCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const url = card.dataset.url;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+
+  const buttons = document.querySelectorAll(".expand-btn");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.stopPropagation(); 
+
+      const currentItem = button.closest(".service-card");
       const isExpanded = currentItem.classList.contains("expanded");
 
       const allItems = document.querySelectorAll(".service-card");
@@ -29,7 +43,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-
-
-
