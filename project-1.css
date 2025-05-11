@@ -152,6 +152,9 @@ nav ul a {
 .start-btn {
   margin-top: 20px;
 }
+.start-btn a {
+  text-decoration: none;
+}
 
 .btn-st {
   background-color: #1d83d0;
