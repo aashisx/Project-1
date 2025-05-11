@@ -43,3 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceCards = document.querySelectorAll(".btn-st");
+  serviceCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const url = card.dataset.url;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+});
