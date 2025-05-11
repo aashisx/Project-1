@@ -18,13 +18,10 @@ body {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
 nav ul a {
   text-decoration: none;
 }
 
->>>>>>> 03c03c515985b6d0c1721d5daf24e232b49732e1
 .header2 {
   display: flex;
   background: rgb(252, 204, 117);
@@ -383,8 +380,4 @@ nav ul a {
 .vehicles nav ul a:hover {
   color: rgb(8, 8, 197);
   transform: scale(1.1);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 03c03c515985b6d0c1721d5daf24e232b49732e1
