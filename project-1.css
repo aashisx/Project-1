@@ -24,7 +24,7 @@ nav ul a {
 
 .header2 {
   display: flex;
-  background: #DDFEF8;
+  background:linear-gradient(to right, #DDFEF8, rgb(36, 36, 215));
   padding: 10px;
   box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
   position: relative;
@@ -157,15 +157,15 @@ nav ul a {
 }
 
 .btn-st {
-  background-color: #1d83d0;
+  background: linear-gradient(to right, #1d83d0,brown);
   color: white;
   padding: 10px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   transition: background-color,0.3s ease,transform 0.3s ease;
-}
 
+}
 .btn-st:hover {
   transform: scale(1.1);
   background-color: #04558e;
