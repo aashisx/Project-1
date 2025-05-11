@@ -24,7 +24,7 @@ nav ul a {
 
 .header2 {
   display: flex;
-  background: rgb(252, 204, 117);
+  background: #DDFEF8;
   padding: 10px;
   box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
   position: relative;
