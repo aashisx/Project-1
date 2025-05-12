@@ -264,7 +264,7 @@ nav ul a {
 .service-card.expanded .card {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  max-height: 321px;
   transform: scale(1.02);
   transition: all 0.4s ease;
 }
@@ -285,12 +285,43 @@ nav ul a {
 
 }
 
+
 .service-card.hidden {
   transform: scale(0.8);
   transition: all 0.4s ease;
   margin: -27px;
   pointer-events: auto;
 
+}
+
+/* Divide the image container into two parts when expanded */
+.extra-content{
+  display: none;
+  transition: opacity 0.4s ease;
+}
+.service-card.expanded .image_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.service-card.expanded .image_container img {
+ height: 192px;
+  width:320px;
+border-radius: 10px 10px 0 0;
+}
+
+.service-card.expanded .image_container .extra-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
 }
 
 
