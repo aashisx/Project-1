@@ -35,8 +35,8 @@
 
     button {
       border-radius: 20px;
-      border: 1px solid #ff4b2b;
-      background-color: #ff4b2b;
+      border: 1px solid #ffffff;
+       background:linear-gradient(to right, #DDFEF8, rgb(36, 36, 215));
       color: #fff;
       font-size: 12px;
       font-weight: bold;
@@ -135,7 +135,7 @@
     }
 
     .overlay {
-      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      background:linear-gradient(to right, #b1b9ff, rgb(36, 36, 215));
       color: #ffffff;
       position: relative;
       left: -100%;
