@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project-1</title>
+    <title>Vehicle Booking</title>
     <link rel="stylesheet" href="shop.css">
-    <script type="text/javascript " src="project1.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="shop.js" defer></script>
 </head>
 
 <body>
-    <!--Header part starts here-->
-    <div class="header2">
+    <!-- Header -->
+    <header class="header2">
         <div class="navigation3">
             <div class="image"><img src="Photos/logo.png" width="150"></div>
             <div class="navigation4">
@@ -23,12 +23,72 @@
                     <ul class="al">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">caeers</a></li>
+                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Contact us</a></li>
                         <li><a href="#">More</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="nav-right">
-                <button class="login-btn">Login</button>
+        </div>
+        <div class="nav-right">
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <!-- Slider -->
+    <div id="vehicle-slider" class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="Photos/car1.jpg" alt="Car Rental">
+                <button class="book-now" data-type="car">Book/Rent Car</button>
             </div>
+            <div class="slide">
+                <img src="Photos/bike1.avif" alt="Bike Rental">
+                <button class="book-now" data-type="bike">Book/Rent Bike</button>
+            </div>
+            <div class="slide">
+                <img src="Photos/Taxi.jpg" alt="Bus Rental">
+                <button class="book-now" data-type="bus">Book/Rent Bus</button>
+            </div>
+            <div class="slide">
+                <img src="Photos/plane.webp" alt="Plane Rental">
+                <button class="book-now" data-type="plane">Book/Rent Plane</button>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Booking Form -->
+    <div id="booking-section" class="booking-area">
+        <h2>Select Your Vehicle</h2>
+        <form id="booking-form">
+            <label for="vehicle-type">Vehicle Type:</label>
+            <select id="vehicle-type" name="vehicle">
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+                <option value="bus">Bus</option>
+                <option value="plane">Plane</option>
+            </select>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="average">Average</option>
+                <option value="good">Good</option>
+                <option value="excellent">Excellent</option>
+                <option value="deluxe">Deluxe</option>
+            </select>
+
+            <label for="price">Price Range:</label>
+            <select id="price" name="price">
+                <option value="low">Under NPR 1000</option>
+                <option value="medium">NPR 1000 - 5000</option>
+                <option value="high">Above NPR 5000</option>
+            </select>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</body>
+
+</html>
