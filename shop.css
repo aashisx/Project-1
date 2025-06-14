@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #eeeff6;
+    color: #0d0c0c;
 }
 
 /* Header */
@@ -17,8 +17,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #222;
-    color: #fff;
+     background:linear-gradient(to right, #DDFEF8, rgb(36, 36, 215));
+    color: #181717;
+}
+.header2 a {
+  padding: 8px;
+  font-size: 17px;
+  color: rgb(14, 12, 10);
+  font-weight: bold;
+
 }
 
 .navigation3 {
@@ -41,7 +48,7 @@ body {
 }
 
 .navigation4 nav ul.al li a {
-    color: #fff;
+    color: #0d0d0d;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 4px;
@@ -54,7 +61,7 @@ body {
 
 .nav-right .login-btn {
     padding: 8px 16px;
-    background-color: #007bff;
+    background-color: #030303;
     border: none;
     color: #fff;
     cursor: pointer;
