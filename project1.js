@@ -63,3 +63,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+$(document).ready(function () {
+  let currentSlide = 0;
+  const slides = $('.slide');
+
+  function showSlide(index) {
+    const offset = -index * 100 + '%';
+    $('.slider').css('transform', 'translateX(' + offset + ')');
+  }
+
+  $('.next').click(function () {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  $('.prev').click(function () {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  $('.book-now').click(function () {
+    const vehicleType = $(this).data('type');
+    alert('Redirecting to booking section for: ' + vehicleType);
+    // Optionally: window.location.href = "#booking-section";
+  });
+});
