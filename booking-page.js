@@ -3,9 +3,9 @@ const vehicles = [
     // Luxury Cars
     {
         id: 1,
-        name: "Mercedes S-Class",
+        name: "Mercedes  benz S-Class",
         type: "luxury",
-        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=250&fit=crop",
+        image: "https://media.ed.edmunds-media.com/mercedes-benz/s-class/2025/oem/2025_mercedes-benz_s-class_sedan_amg-s-63-e-performance_fq_oem_1_1600.jpg",
         price:  150,
         rating: 4.9,
         reviews: 245,
@@ -19,7 +19,7 @@ const vehicles = [
         id: 2,
         name: "Range Rover Evoque",
         type: "luxury",
-        image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=250&fit=crop",
+        image: "https://www.ezoomed.com/wp-content/uploads/2021/06/ev-1.jpg",
         price: 120,
         rating: 4.8,
         reviews: 189,
@@ -33,7 +33,7 @@ const vehicles = [
         id: 3,
         name: "Audi A6",
         type: "luxury",
-        image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400&h=250&fit=crop",
+        image: "https://static0.carbuzzimages.com/wordpress/wp-content/uploads/2024/03/1143385-33.jpg",
         price: 110,
         rating: 4.7,
         reviews: 156,
@@ -47,7 +47,7 @@ const vehicles = [
         id: 4,
         name: "Lexus ES",
         type: "luxury",
-        image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop",
+        image: "https://focus.independent.ie/thumbor/LQX9mX1RvWPfSeGf41mVYu2YiXo=/0x107:800x548/960x640/prod-mh-ireland/41ee89ee-c561-11ed-9dd2-0210609a3fe2",
         price: 95,
         rating: 4.6,
         reviews: 134,
@@ -62,7 +62,7 @@ const vehicles = [
         id: 5,
         name: "Toyota Camry",
         type: "economy",
-        image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400&h=250&fit=crop",
+        image: "https://static3.toyotabharat.com/images/showroom/new-camry/elegance-1000x313.png",
         price: 45,
         rating: 4.5,
         reviews: 298,
@@ -76,7 +76,7 @@ const vehicles = [
         id: 6,
         name: "Honda Accord",
         type: "economy",
-        image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=400&h=250&fit=crop",
+        image: "https://media.ed.edmunds-media.com/honda/accord/2025/oem/2025_honda_accord_sedan_sport-l-hybrid_fq_oem_1_1600.jpg",
         price: 42,
         rating: 4.4,
         reviews: 267,
@@ -90,7 +90,7 @@ const vehicles = [
         id: 7,
         name: "Nissan Altima",
         type: "economy",
-        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=250&fit=crop",
+        image: "https://media.ed.edmunds-media.com/nissan/altima/2025/oem/2025_nissan_altima_sedan_25-sv_fq_oem_1_1600.jpg",
         price: 40,
         rating: 4.3,
         reviews: 198,
@@ -104,7 +104,7 @@ const vehicles = [
         id: 8,
         name: "Mazda 6",
         type: "economy",
-        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=250&fit=crop",
+        image: "https://www.cnet.com/a/img/resize/7b895bd6646c11cecb555787347418dd6c81db10/hub/2021/06/10/0de6b99a-c87f-4cc3-9a6a-f23245e3de03/mazda6-lead.jpg?auto=webp&width=1200",
         price: 38,
         rating: 4.2,
         reviews: 156,
@@ -119,8 +119,8 @@ const vehicles = [
         id: 9,
         name: "BMW M3",
         type: "performance",
-        image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop",
-        price: 5000,
+        image: "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Fbig%2Fbmw%2Fm3%2Fbmw-m3.jpg%3Fv%3D12&w=3840&q=75",
+        price: 500,
         rating: 4.9,
         reviews: 89,
         seats: 4,
@@ -131,6 +131,20 @@ const vehicles = [
     },
     {
         id: 10,
+        name: "BMW M5 CS",
+        type: "performance",
+        image: "https://www.automoblog.com/wp-content/uploads/2021/01/2022-BMW-M5-CS-Sedan-3.jpg",
+        price: 500,
+        rating: 5.0,
+        reviews: 112,
+        seats: 4,
+        fuel: "Petrol",
+        transmission: "M Steptronic transmission ",
+        features: ["M Performance", "Track Mode", "Carbon Fiber"],
+        available: true
+    },
+    {
+        id: 11,
         name: "Lamborghini Huracán",
         type: "performance",
         image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=250&fit=crop",
@@ -144,10 +158,10 @@ const vehicles = [
         available: false
     },
     {
-        id: 11,
+        id: 12,
         name: "Porsche 911",
         type: "performance",
-        image: "https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=400&h=250&fit=crop",
+        image: "https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCxkF%25vUqCNwuWXsO7QNeV6iTxjgzhRc2LUjqA7fQrmVOJUPYDImTB8VuyY0oVk0DBRlqvzpQNqjdtAsvyJ5I",
         price: 350,
         rating: 4.8,
         reviews: 67,
@@ -159,10 +173,10 @@ const vehicles = [
     },
     // Bikes
     {
-        id: 12,
+        id: 13,
         name: "Royal Enfield Classic",
         type: "bike",
-        image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=250&fit=crop",
+        image: "https://imgd.aeplcdn.com/1280x720/n/cw/ec/183389/classic-350-right-front-three-quarter-13.jpeg?isig=0",
         price: 25,
         rating: 4.6,
         reviews: 189,
@@ -173,10 +187,10 @@ const vehicles = [
         available: true
     },
     {
-        id: 13,
+        id: 14,
         name: "Yamaha FZ",
         type: "bike",
-        image: "https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=400&h=250&fit=crop",
+        image: "https://www.maw2wheelers.com/wp-content/uploads/2024/09/FZ-FI-V3-Blue.jpg",
         price: 20,
         rating: 4.5,
         reviews: 145,
@@ -184,6 +198,197 @@ const vehicles = [
         fuel: "Petrol",
         transmission: "Manual",
         features: ["Helmet", "Phone Holder", "LED Lights"],
+        available: true
+    },
+    {
+        id: 15,
+        name: "Mercedes maybach S-Class",
+        type: "luxury",
+        image: "https://images.netdirector.co.uk/gforces-auto/image/upload/w_412,h_309,dpr_2.0,q_auto,c_fill,f_auto,fl_lossy/auto-client/945fb96980ef9653e3e9375fe4e43b49/01_s_class_maybach_onyxschwarz_kalahari_gold_metallic_f2.png",
+        price: 150,
+        rating: 4.9,
+        reviews: 245,
+        seats: 5,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["Luxury Interior", "Massage Seats", "Premium Sound"],
+        available: true
+    },
+    // ... (previous vehicles remain unchanged)
+
+    // Additional Luxury Cars
+    {
+        id: 16,
+        name: "Rolls-Royce Ghost",
+        type: "luxury",
+        image: "https://images.unsplash.com/photo-1624441740188-15b9c1f4f9a5",
+        price: 450,
+        rating: 5.0,
+        reviews: 78,
+        seats: 4,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["Handcrafted Interior", "Starlight Headliner", "Magic Carpet Ride"],
+        available: true
+    },
+    {
+        id: 17,
+        name: "Bentley Continental GT",
+        type: "luxury",
+        image: "https://www.bentleymedia.com/image/997b4e95-4ac0-48e1-9bc2-eab2861d0170?anchor=middlecenter&bgcolor=Transparent&borderWidth=0&crop=0%2C0%2C0%2C0&width=460",
+        price: 280,
+        rating: 4.9,
+        reviews: 92,
+        seats: 4,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["W12 Engine", "Mulliner Driving Spec", "20", "Alloy Wheels"],
+        available: true
+    },
+
+    // Additional Economy Cars
+    {
+        id: 18,
+        name: "Hyundai Elantra",
+        type: "economy",
+        image: "https://hips.hearstapps.com/hmg-prod/images/2024-hyundai-elantra-n-lightning-lap-2025-178-67b0a408c7cd0.jpg?crop=0.590xw:0.498xh;0.232xw,0.310xh&resize=2048:*",
+        price: 35,
+        rating: 4.3,
+        reviews: 187,
+        seats: 5,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["SmartSense", "10.25", "Display", "Wireless Charging"],
+        available: true,
+    },
+    {
+        id: 19,
+        name: "Kia K5",
+        type: "economy",
+        image: "https://i.gaw.to/content/photos/59/50/595062-un-vent-de-fraicheur-souffle-sur-la-kia-k5.jpg?1024x640",
+        price: 37,
+        rating: 4.4,
+        reviews: 156,
+        seats: 5,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["GT-Line Package", "Panoramic Sunroof", "Advanced Safety"],
+        available: true
+    },
+
+    // Additional Performance Cars
+    {
+        id: 20,
+        name: "Ferrari 488 GTB",
+        type: "performance",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs1qXDCPn9qeNUYAqq8nst_-6LjAlmHf3zxw&s",
+        price: 600,
+        rating: 4.9,
+        reviews: 45,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["Twin-Turbo V8", "F1-Trac", "Carbon Ceramic Brakes"],
+        available: true
+    },
+    {
+        id: 21,
+        name: "McLaren 720S",
+        type: "performance",
+        image: "https://cdn.motor1.com/images/mgl/krMYM/s3/mclaren-720s-spider-by-mso.jpg",
+        price: 550,
+        rating: 4.8,
+        reviews: 38,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["Monocage II", "Active Dynamics Panel", "Dihedral Doors"],
+        available: false
+    },
+    {
+        id: 22,
+        name: "Audi R8",
+        type: "performance",
+        image: "https://hips.hearstapps.com/hmg-prod/images/2021-audi-r8-mmp-1-1603746624.jpg?crop=0.756xw:0.568xh;0.220xw,0.316xh&resize=1200:*",
+        price: 400,
+        rating: 4.7,
+        reviews: 56,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Automatic",
+        features: ["V10 Engine", "Quattro AWD", "Virtual Cockpit"],
+        available: true
+    },
+
+    // Additional Bikes
+    {
+        id: 23,
+        name: "Harley-Davidson Street Glide",
+        type: "bike",
+        image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
+        price: 50,
+        rating: 4.7,
+        reviews: 112,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Manual",
+        features: ["Boom! Box GTS", "Milwaukee-Eight 114", "Tour-Pak Luggage"],
+        available: true
+    },
+    {
+        id: 24,
+        name: "Ducati Panigale V4",
+        type: "bike",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2VVvf8rJHxrLpEVNd1Xlh7yAQwlxraCRyCR-CtneB1TZVeDa3k4ntwRxxI9exx5-PZIA&usqp=CAU",
+        price: 60,
+        rating: 4.9,
+        reviews: 89,
+        seats: 1,
+        fuel: "Petrol",
+        transmission: "Manual",
+        features: ["Desmosedici Stradale", "Aerodynamic Winglets", "Ohlins Suspension"],
+        available: true
+    },
+    {
+        id: 25,
+        name: "Kawasaki Ninja H2",
+        type: "bike",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kawasaki_Ninja_H2.jpg/1200px-Kawasaki_Ninja_H2.jpg",
+        price: 70,
+        rating: 5.0,
+        reviews: 67,
+        seats: 1,
+        fuel: "Petrol",
+        transmission: "Manual",
+        features: ["Supercharged Engine", "Aerodynamic Design", "Brembo Brakes"],
+        available: true
+    },
+    {
+        id: 26,
+        name: "Triumph Bonneville T120",
+        type: "bike",
+        image: "https://remmotorcycle.com/cdn/shop/files/DYNASOUNDEXHAUST_5_600x.jpg?v=1738091395",
+        price: 30,
+        rating: 4.6,
+        reviews: 98,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Manual",
+        features: ["Classic Design", "Torque-Assist Clutch", "USB Charging"],
+        available: true
+    },
+    {
+        id: 27,
+        name: "BMW R 1250 GS",
+        type: "bike",
+        image: "https://brisans.imgix.net/2024-Models/BMW-Motorrad/R-1250-GS-Adventure-Ultimate-Edition.jpg?fit=max&auto=format,compress&w=730&h=auto",
+        price: 55,
+        rating: 4.8,
+        reviews: 124,
+        seats: 2,
+        fuel: "Petrol",
+        transmission: "Manual",
+        features: ["ShiftCam Technology", "Dynamic ESA", "TFT Display"],
         available: true
     }
 ];
@@ -339,7 +544,7 @@ function createVehicleCard(vehicle) {
                         <div class="vehicle-type">${vehicle.type}</div>
                     </div>
                     <div class="vehicle-price">
-                        <div class="price">Rs${vehicle.price}</div>
+                        <div class="price">$ ${vehicle.price}</div>
                         <div class="price-unit">per day</div>
                     </div>
                 </div>
@@ -411,7 +616,7 @@ function bookVehicle(vehicleId) {
         const returnDate = document.getElementById('returnDate').value;
         const location = document.getElementById('searchLocation').value || 'Selected location';
         
-        alert(`Booking ${vehicle.name} for Rs${vehicle.price}/day\nPickup: ${pickupDate}\nReturn: ${returnDate}\nLocation: ${location}\n\nRedirecting to payment...`);
+        alert(`Booking ${vehicle.name} for $ ${vehicle.price}/day\nPickup: ${pickupDate}\nReturn: ${returnDate}\nLocation: ${location}\n\nRedirecting to payment...`);
         // Here you would typically redirect to a booking form or payment page
     }
 }
