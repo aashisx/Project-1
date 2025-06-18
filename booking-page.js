@@ -6,7 +6,7 @@ const vehicles = [
         name: "Mercedes S-Class",
         type: "luxury",
         image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=250&fit=crop",
-        price: 150,
+        price:  150,
         rating: 4.9,
         reviews: 245,
         seats: 5,
@@ -120,7 +120,7 @@ const vehicles = [
         name: "BMW M3",
         type: "performance",
         image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop",
-        price: 180,
+        price: 5000,
         rating: 4.9,
         reviews: 89,
         seats: 4,
@@ -207,6 +207,17 @@ const sortSelect = document.getElementById('sortBy');
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Add this block ---
+    const params = new URLSearchParams(window.location.search);
+    const urlType = params.get('type');
+    if (urlType) {
+        selectedType = urlType;
+        filterButtons.forEach(b => {
+            b.classList.toggle('active', b.dataset.type === urlType);
+        });
+    }
+    // --- End block ---
+
     // Set default date values
     const today = new Date().toISOString().split('T')[0];
     const tomorrow = new Date();
@@ -328,7 +339,7 @@ function createVehicleCard(vehicle) {
                         <div class="vehicle-type">${vehicle.type}</div>
                     </div>
                     <div class="vehicle-price">
-                        <div class="price">₹${vehicle.price}</div>
+                        <div class="price">Rs${vehicle.price}</div>
                         <div class="price-unit">per day</div>
                     </div>
                 </div>
@@ -400,7 +411,7 @@ function bookVehicle(vehicleId) {
         const returnDate = document.getElementById('returnDate').value;
         const location = document.getElementById('searchLocation').value || 'Selected location';
         
-        alert(`Booking ${vehicle.name} for ₹${vehicle.price}/day\nPickup: ${pickupDate}\nReturn: ${returnDate}\nLocation: ${location}\n\nRedirecting to payment...`);
+        alert(`Booking ${vehicle.name} for Rs${vehicle.price}/day\nPickup: ${pickupDate}\nReturn: ${returnDate}\nLocation: ${location}\n\nRedirecting to payment...`);
         // Here you would typically redirect to a booking form or payment page
     }
 }

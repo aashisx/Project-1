@@ -24,7 +24,7 @@ nav ul a {
 
 .header2 {
   display: flex;
-  background:linear-gradient(to right, #DDFEF8, rgb(36, 36, 215));
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #059669 100%);
   padding: 10px;
   box-shadow: 3px 5px 5px rgba(1, 1, 1, 0.3);
   position: relative;
@@ -157,7 +157,7 @@ nav ul a {
 }
 
 .btn-st {
-  background: linear-gradient(to right, #1d83d0,brown);
+  background:  linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #059669 100%);
   color: white;
   padding: 10px;
   border: none;

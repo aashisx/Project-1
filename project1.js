@@ -9,8 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
   serviceCards.forEach((card) => {
     card.addEventListener("click", function () {
       const url = card.dataset.url;
+      // Get the type from the card content (e.g., Cars, Bikes, Taxi, Planes)
+      const typeText = card.querySelector('.card_content h3')?.textContent?.toLowerCase();
+      let typeParam = '';
+      if (typeText) {
+        if (typeText.includes('car')) typeParam = 'luxury'; // or 'economy' if you want both
+        else if (typeText.includes('bike')) typeParam = 'bike';
+        else if (typeText.includes('taxi')) typeParam = 'economy';
+        else if (typeText.includes('plane')) typeParam = 'performance';
+      }
       if (url) {
-        window.location.href = url;
+        window.location.href = typeParam ? `${url}?type=${typeParam}` : url;
       }
     });
   });
