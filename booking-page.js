@@ -221,7 +221,7 @@ const vehicles = [
         id: 16,
         name: "Rolls-Royce Ghost",
         type: "luxury",
-        image: "https://images.unsplash.com/photo-1624441740188-15b9c1f4f9a5",
+        image: "https://www.carscoops.com/wp-content/uploads/2024/01/GhostRedefinedbyUrbanAutomotive-9-copy-scaled.jpg",
         price: 450,
         rating: 5.0,
         reviews: 78,
