@@ -81,10 +81,43 @@ $(document).ready(function () {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
   });
-
-  $('.book-now').click(function () {
-    const vehicleType = $(this).data('type');
-    alert('Redirecting to booking section for: ' + vehicleType);
-    // Optionally: window.location.href = "#booking-section";
+});
+  document.addEventListener("DOMContentLoaded", function () {
+  const slidercontainer = document.querySelectorAll(".slider-cotainer . book-now");
+  slidercontainer.forEach((slider) => {
+    slider.addEventListener("click", function () {
+      const url = card.dataset.url;
+      // Get the type from the card content (e.g., Cars, Bikes, Taxi, Planes)
+      const typeText = slider.querySelector('.card_content h3')?.textContent?.toLowerCase();
+      let typeParam = '';
+      if (typeText) {
+        if (typeText.includes('car')) typeParam = 'luxury'; // or 'economy' if you want both
+        else if (typeText.includes('Book Car')) typeParam = 'bike';
+        else if (typeText.includes('Book Bus')) typeParam = 'economy';
+        else if (typeText.includes('Book Plane')) typeParam = 'performance';
+      }
+      if (url) {
+        window.location.href = typeParam ? `${url}?type=${typeParam}` : url;
+      }
+    });
+  });
+  });
+// Book Now button logic for slider
+document.addEventListener("DOMContentLoaded", function () {
+  const bookNowButtons = document.querySelectorAll(".slider-container .book-now");
+  bookNowButtons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      // Get the type from data-type attribute
+      let type = btn.getAttribute("data-type");
+      // Map slider types to booking-page types
+      let typeParam = "";
+      if (type === "car") typeParam = "luxury"; // or "economy" if you want economy cars
+      else if (type === "bike") typeParam = "bike";
+      else if (type === "bus") typeParam = "economy";
+      else if (type === "plane") typeParam = "performance";
+      // Redirect with type param
+      window.location.href = `booking.html?type=${typeParam}`;
+    });
   });
 });
