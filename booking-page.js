@@ -609,7 +609,7 @@ function toggleFavorite(vehicleId) {
     renderVehicles();
 }
 
-function bookVehicle(vehicleId) {
+/*function bookVehicle(vehicleId) {
     const vehicle = vehicles.find(v => v.id === vehicleId);
     if (vehicle && vehicle.available) {
         const pickupDate = document.getElementById('pickupDate').value;
@@ -619,7 +619,7 @@ function bookVehicle(vehicleId) {
         alert(`Booking ${vehicle.name} for $ ${vehicle.price}/day\nPickup: ${pickupDate}\nReturn: ${returnDate}\nLocation: ${location}\n\nRedirecting to payment...`);
         // Here you would typically redirect to a booking form or payment page
     }
-}
+}*/
 
 // Search functionality
 document.querySelector('.search-btn').addEventListener('click', function() {
@@ -635,4 +635,15 @@ document.querySelector('.search-btn').addEventListener('click', function() {
     console.log('Searching for vehicles:', { location, pickupDate, returnDate });
     // Here you would typically filter vehicles based on location and dates
     alert(`Searching for vehicles in ${location} from ${pickupDate} to ${returnDate}`);
+});
+
+// After rendering vehicle cards, add this event listener:
+document.addEventListener("DOMContentLoaded", function () {
+  // Delegate event for dynamically created buttons
+  document.getElementById("vehiclesGrid").addEventListener("click", function (e) {
+    if (e.target.classList.contains("book-btn")) {
+      e.preventDefault();
+      window.location.href = "registration.html";
+    }
+  });
 });

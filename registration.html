@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <meta name="description" content="Simple Registration Form" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #059669 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .form-container {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background-color: #f8f9fa;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .form-input.error {
+        border-color: #dc3545;
+        background-color: #fff5f5;
+      }
+
+      .form-input.success {
+        border-color: #28a745;
+        background-color: #f0fff4;
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #059669 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+        color: #667eea;
+      }
+
+      .success-message {
+        display: none;
+        background-color: #d4edda;
+        color: #155724;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 15px;
+        text-align: center;
+        border: 1px solid #c3e6cb;
+      }
+
+      @media (max-width: 480px) {
+        .form-container {
+          padding: 30px 20px;
+        }
+        
+        .form-title {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h1 class="form-title">Book Your Service</h1>
+      
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-input"
+            placeholder="Enter your full name"
+          />
+          <div class="error-message" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="Enter your email"
+          />
+          <div class="error-message" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="form-input"
+            placeholder="Enter your phone number"
+          />
+          <div class="error-message" id="phoneError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="address" class="form-label">Address</label>
+          <textarea
+            id="address"
+            name="address"
+            class="form-input"
+            placeholder="Enter your complete address"
+            rows="3"
+            style="resize: vertical; min-height: 80px;"
+          ></textarea>
+          <div class="error-message" id="addressError"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Book Now
+        </button>
+        
+        <div class="loading" id="loading">Processing your request...</div>
+        <div class="success-message" id="successMessage">
+          Registration successful! Your booking request has been submitted.
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registrationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const successMessage = document.getElementById('successMessage');
+
+        // Real-time validation
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+          input.addEventListener('blur', function() {
+            validateField(this);
+          });
+          
+          input.addEventListener('input', function() {
+            clearError(this);
+          });
+        });
+
+        function validateField(field) {
+          const fieldName = field.name;
+          const value = field.value.trim();
+          let isValid = true;
+          let errorMessage = '';
+
+          switch(fieldName) {
+            case 'name':
+              if (!value) {
+                errorMessage = 'Name is required';
+                isValid = false;
+              } else if (value.length < 2) {
+                errorMessage = 'Name must be at least 2 characters';
+                isValid = false;
+              }
+              break;
+
+            case 'email':
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!value) {
+                errorMessage = 'Email is required';
+                isValid = false;
+              } else if (!emailRegex.test(value)) {
+                errorMessage = 'Please enter a valid email address';
+                isValid = false;
+              }
+              break;
+
+            case 'phone':
+              const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+              const cleanPhone = value.replace(/[\s\-\(\)]/g, '');
+              if (!value) {
+                errorMessage = 'Phone number is required';
+                isValid = false;
+              } else if (!phoneRegex.test(cleanPhone)) {
+                errorMessage = 'Please enter a valid phone number';
+                isValid = false;
+              }
+              break;
+
+            case 'address':
+              if (!value) {
+                errorMessage = 'Address is required';
+                isValid = false;
+              } else if (value.length < 10) {
+                errorMessage = 'Please enter a complete address';
+                isValid = false;
+              }
+              break;
+          }
+
+          if (isValid) {
+            field.classList.remove('error');
+            field.classList.add('success');
+            hideError(fieldName);
+          } else {
+            field.classList.remove('success');
+            field.classList.add('error');
+            showError(fieldName, errorMessage);
+          }
+
+          return isValid;
+        }
+
+        function showError(fieldName, message) {
+          const errorElement = document.getElementById(fieldName + 'Error');
+          errorElement.textContent = message;
+          errorElement.classList.add('show');
+        }
+
+        function hideError(fieldName) {
+          const errorElement = document.getElementById(fieldName + 'Error');
+          errorElement.classList.remove('show');
+        }
+
+        function clearError(field) {
+          if (field.classList.contains('error')) {
+            field.classList.remove('error');
+            hideError(field.name);
+          }
+        }
+
+        function validateForm() {
+          const fields = ['name', 'email', 'phone', 'address'];
+          let isFormValid = true;
+
+          fields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            const isFieldValid = validateField(field);
+            if (!isFieldValid) {
+              isFormValid = false;
+            }
+          });
+
+          return isFormValid;
+        }
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (!validateForm()) {
+            return;
+          }
+
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Processing...';
+          loading.style.display = 'block';
+          successMessage.style.display = 'none';
+
+          // Simulate API call
+          setTimeout(() => {
+            // Hide loading state
+            loading.style.display = 'none';
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            form.reset();
+            inputs.forEach(input => {
+              input.classList.remove('success', 'error');
+            });
+            
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Book Now';
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              successMessage.style.display = 'none';
+            }, 5000);
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
