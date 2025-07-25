@@ -479,24 +479,26 @@ body {
         padding: 32px 24px 24px 24px;
         max-width: 500px;   /* Increased from 400px to 500px */
         width: 95vw;        /* Increased from 90vw to 95vw */
+        max-height: 750px; /* Decreased height */
+        min-height: 300px;  /* Set a minimum height */
       }
 
       .form-title {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         color: #333;
-        font-size: 28px;
+        font-size: 28px;    
         font-weight: 600;
       }
 
       .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         position: relative;
       }
 
       .form-label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 3px;
         color: #555;
         font-weight: 500;
         font-size: 14px;
