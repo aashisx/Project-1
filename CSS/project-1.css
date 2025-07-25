@@ -221,7 +221,7 @@ nav ul a {
 }
 
 .text-wrap {
-  background-color: #1d83d0;
+   background: linear-gradient(135deg, #0c50e2 0%, #1d4ed8 50%, #059669 100%);
   padding: 5px;
   font-family: cursive;
   margin-bottom: 10px;
