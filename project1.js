@@ -141,3 +141,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+//gallery tabx//
+$(document).ready(function() {
+$('#gallery').tabX({
+
+  type:'buttons',
+
+  animation:'none',
+
+  animations: ["fade","slide","fall","noir","rotatez","rotatey","rotatex","blur","away","blast"],
+
+  boxClass:'default',
+
+  activeCat:'all',
+});
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryMain = document.querySelector('.gallery-main');
+  if (galleryMain) galleryMain.style.display = 'none';
+
+  // When a service card image is clicked
+  document.querySelectorAll('.service-img').forEach(img => {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (galleryMain) galleryMain.style.display = 'flex';
+
+      // Get the category from data-gallery attribute
+      const cat = img.getAttribute('data-gallery');
+      // Show the correct TabX gallery tab
+      if (window.$ && $('#gallery').data('tabX')) {
+        $('#gallery').tabX('show', cat);
+      }
+    });
+  });
+
+  // Close gallery when close button is clicked
+  document.querySelectorAll('.gallery-close').forEach(btn => {
+    btn.addEventListener('click', function () {
+      btn.closest('.gallery-main').style.display = 'none';
+    });
+  });
+});

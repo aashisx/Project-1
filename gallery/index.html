@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>jQuery tabX Plugin Examples</title>
+<link rel="stylesheet" href="tabx/tabx.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="tabx/tabx.js"></script>
+<script src="demo.js"></script>
+
+</head>
+<body class="body-">
+
+
+<div class="body-ctr">
+<div class="ctr">
+    <h1>jQuery tabX Plugin Examples</h1><style>
+.download{ padding: 1.25rem; border:0; border-radius:3px; background-color:#4F46E5; color:#fff;cursor:pointer; text-decoration:none;}.download:hover{color: #fff}#carbonads{display:block;overflow:hidden;max-width:728px;position:relative;font-size:22px;box-sizing:content-box}#carbonads>span{display:block}#carbonads a{color:#4F46E5;text-decoration:none}#carbonads a:hover{color:#4F46E5}.carbon-wrap{display:flex;align-items:center}.carbon-img{display:block;margin:0;line-height:1}.carbon-img img{display:block;height:90px;width:auto}.carbon-text{display:block;padding:0 1em;line-height:1.35;text-align:left}.carbon-poweredby{display:block;position:absolute;bottom:0;right:0;padding:6px 10px;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:8px;border-top-left-radius:4px;line-height:1;color:#aaa!important}@media only screen and (min-width:320px) and (max-width:759px){.carbon-text{font-size:14px}}
+</style>
+<div><div id="carbon-block"></div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2783044520727903"
+     crossorigin="anonymous"></script>
+<!-- jQuery_Replace_Demo -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2783044520727903"
+     data-ad-slot="7325992188"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p style="margin:2rem auto"><a class="download" href="https://www.jqueryscript.net/gallery/filterable-gallery-tabx.html">Download This Plugin</a> <a class="download" href="https://www.jqueryscript.net/">Back To jQueryScript</a></p>
+<p>A jQuery plugin to create interactive and filterable galleries. Perfect for portfolios, photo galleries, online stores, and more.</p>
+
+<div>
+
+<div id="demo-apply" class="row">
+
+<div class="column25">
+<label for="type">Tab types :</label>
+<select onchange="demo_reapply()" id="type" name="type">
+<option value="buttons">buttons (Default value)</option>
+<option>pills</option>
+<option>tabs</option>
+<option>switches</option>
+<option>radios</option>
+</select>
+</div>
+
+<div class="column25">
+<label for="animation">Content animation :</label>
+<select onchange="demo_reapply()" id="animation" name="animation">
+<option value="none">none (Default value)</option>
+<option>fade</option>
+<option>slide</option>
+<option>fall</option>
+<option>noir</option>
+<option>rotatez</option>
+<option>rotatey</option>
+<option>rotatex</option>
+<option>blur</option>
+<option>away</option>
+<option>blast</option>
+<option>random</option>
+</select>
+</div>
+
+<div class="column25">
+<label for="boxClass">Content design :</label>
+<select onchange="demo_reapply()" id="boxClass" name="boxClass">
+<option value="default">default (Default value)</option>
+<option>photo</option>
+<option>glass</option>
+<option>plastic</option>
+<option>frosty</option>
+<option>candy</option>
+<option>double</option>
+<option>neon</option>
+<option>stamp</option>
+<option>chequered</option>
+</select>
+</div>
+
+<div class="column25">
+<label>&nbsp;</label>
+<label for="btn">&nbsp;</label>
+</div>
+
+</div>
+
+<div tabx-id="foolwa">
+
+<div tabx-cats="category-1">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=1"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 1</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-1">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=2"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 2</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-2,category-3">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=3"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 3</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-4">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=4"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 4</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-1,category-3">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=5"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 5</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-1,category-2">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=6"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 6</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-4">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=7"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 7</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-2,category-4">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=8"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 8</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-1,category-4">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=9"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 9</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-3,category-4">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=10"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 10</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-2">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=11"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 11</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+<div tabx-cats="category-3">
+<a href="#"><img class="tabx-img" src="https://picsum.photos/600/400?random=12"></a>
+<div class="tabx-info">
+<div class="tabx-title">Random Image 12</div>
+<div class="tabx-descr">Random Imag From picsum.photos.</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div><script async src="https://www.googletagmanager.com/gtag/js?id=G-1VDDWMRSTH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1VDDWMRSTH');
+</script><script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+</body>
+</html>
