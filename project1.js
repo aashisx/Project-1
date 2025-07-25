@@ -121,3 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBtn = document.getElementById("searchBtn");
+  if (searchBtn) {
+    searchBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const location = document.getElementById("searchLocation").value.trim();
+      const pickupDate = document.getElementById("pickupDate").value;
+      const returnDate = document.getElementById("returnDate").value;
+
+      // Example: Redirect to booking.html with search parameters
+      const params = new URLSearchParams({
+        location,
+        pickupDate,
+        returnDate
+      }).toString();
+
+      window.location.href = `booking.html?${params}`;
+    });
+  }
+});

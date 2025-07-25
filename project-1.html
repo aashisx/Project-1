@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,16 +34,43 @@
             </div>
 
         </div>
-        <div class="search-bar">
-            <div class="search-section">
-                <i class="fa fa-search"></i>
-                <input type="text" placeholder="Where are you going?" />
+        <div class="search-section">
+            <div class="search-card">
+                <div class="search-grid">
+                    <!-- Location -->
+                    <div class="search-field">
+                        <label>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Pickup Location
+                        </label>
+                        <input type="text" id="searchLocation" placeholder="Enter city or location">
+                    </div>
+
+                    <!-- Pickup Date -->
+                    <div class="search-field">
+                        <label>
+                            <i class="fas fa-calendar"></i>
+                            Pickup Date
+                        </label>
+                        <input type="date" id="pickupDate">
+                    </div>
+
+                    <!-- Return Date -->
+                    <div class="search-field">
+                        <label>
+                            <i class="fas fa-calendar"></i>
+                            Return Date
+                        </label>
+                        <input type="date" id="returnDate">
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="search-field">
+                        <label class="transparent">Search</label>
+                        <button class="search-btn" id="searchBtn">Search Vehicles</button>
+                    </div>
+                </div>
             </div>
-            <div class="search-section">
-                <i class="fa fa-calendar"></i>
-                <input type="text" placeholder="Select your dates" id="datepicker" />
-            </div>
-            <button>Search</button>
         </div>
     </div>
     <!--Header part ends here-->
