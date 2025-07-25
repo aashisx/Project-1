@@ -637,13 +637,184 @@ document.querySelector('.search-btn').addEventListener('click', function() {
     alert(`Searching for vehicles in ${location} from ${pickupDate} to ${returnDate}`);
 });
 
-// After rendering vehicle cards, add this event listener:
-document.addEventListener("DOMContentLoaded", function () {
-  // Delegate event for dynamically created buttons
-  document.getElementById("vehiclesGrid").addEventListener("click", function (e) {
+
+document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registrationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const successMessage = document.getElementById('successMessage');
+
+        // Real-time validation
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+          input.addEventListener('blur', function() {
+            validateField(this);
+          });
+          
+          input.addEventListener('input', function() {
+            clearError(this);
+          });
+        });
+
+        function validateField(field) {
+          const fieldName = field.name;
+          const value = field.value.trim();
+          let isValid = true;
+          let errorMessage = '';
+
+          switch(fieldName) {
+            case 'name':
+              if (!value) {
+                errorMessage = 'Name is required';
+                isValid = false;
+              } else if (value.length < 2) {
+                errorMessage = 'Name must be at least 2 characters';
+                isValid = false;
+              }
+              break;
+
+            case 'email':
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!value) {
+                errorMessage = 'Email is required';
+                isValid = false;
+              } else if (!emailRegex.test(value)) {
+                errorMessage = 'Please enter a valid email address';
+                isValid = false;
+              }
+              break;
+
+            case 'phone':
+              const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+              const cleanPhone = value.replace(/[\s\-\(\)]/g, '');
+              if (!value) {
+                errorMessage = 'Phone number is required';
+                isValid = false;
+              } else if (!phoneRegex.test(cleanPhone)) {
+                errorMessage = 'Please enter a valid phone number';
+                isValid = false;
+              }
+              break;
+
+            case 'address':
+              if (!value) {
+                errorMessage = 'Address is required';
+                isValid = false;
+              } else if (value.length < 10) {
+                errorMessage = 'Please enter a complete address';
+                isValid = false;
+              }
+              break;
+          }
+
+          if (isValid) {
+            field.classList.remove('error');
+            field.classList.add('success');
+            hideError(fieldName);
+          } else {
+            field.classList.remove('success');
+            field.classList.add('error');
+            showError(fieldName, errorMessage);
+          }
+
+          return isValid;
+        }
+
+        function showError(fieldName, message) {
+          const errorElement = document.getElementById(fieldName + 'Error');
+          errorElement.textContent = message;
+          errorElement.classList.add('show');
+        }
+
+        function hideError(fieldName) {
+          const errorElement = document.getElementById(fieldName + 'Error');
+          errorElement.classList.remove('show');
+        }
+
+        function clearError(field) {
+          if (field.classList.contains('error')) {
+            field.classList.remove('error');
+            hideError(field.name);
+          }
+        }
+
+        function validateForm() {
+          const fields = ['name', 'email', 'phone', 'address'];
+          let isFormValid = true;
+
+          fields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            const isFieldValid = validateField(field);
+            if (!isFieldValid) {
+              isFormValid = false;
+            }
+          });
+
+          return isFormValid;
+        }
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (!validateForm()) {
+            return;
+          }
+
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Processing...';
+          loading.style.display = 'block';
+          successMessage.style.display = 'none';
+
+          // Simulate API call
+          setTimeout(() => {
+            // Hide loading state
+            loading.style.display = 'none';
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            form.reset();
+            inputs.forEach(input => {
+              input.classList.remove('success', 'error');
+            });
+            
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Book Now';
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              successMessage.style.display = 'none';
+            }, 5000);
+          }, 2000);
+        });
+      });
+document.addEventListener('DOMContentLoaded', function() {
+  const vehiclesGrid = document.getElementById('vehiclesGrid');
+  const formContainer = document.querySelector('.form-container');
+  const formCloseBtn = document.querySelector('.form-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  // Hide form and overlay on page load
+  if (formContainer) formContainer.style.display = "none";
+  if (modalOverlay) modalOverlay.style.display = "none";
+
+  // Show form and overlay when Book Now is clicked
+  vehiclesGrid.addEventListener("click", function (e) {
     if (e.target.classList.contains("book-btn")) {
       e.preventDefault();
-      window.location.href = "registration.html";
+      if (formContainer) formContainer.style.display = "block";
+      if (modalOverlay) modalOverlay.style.display = "block";
     }
   });
+
+  // Close form and overlay when close button is clicked
+  if (formCloseBtn) {
+    formCloseBtn.addEventListener('click', function () {
+      formContainer.style.display = "none";
+      if (modalOverlay) modalOverlay.style.display = "none";
+    });
+  }
 });

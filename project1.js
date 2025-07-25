@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
   serviceCards.forEach((card) => {
     card.addEventListener("click", function () {
       const url = card.dataset.url;
-      // Get the type from the card content (e.g., Cars, Bikes, Taxi, Planes)
+   
       const typeText = card.querySelector('.card_content h3')?.textContent?.toLowerCase();
       let typeParam = '';
       if (typeText) {
-        if (typeText.includes('car')) typeParam = 'luxury'; // or 'economy' if you want both
+        if (typeText.includes('car')) typeParam = 'luxury';
         else if (typeText.includes('bike')) typeParam = 'bike';
         else if (typeText.includes('taxi')) typeParam = 'economy';
         else if (typeText.includes('plane')) typeParam = 'performance';
@@ -37,16 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isExpanded) {
         allItems.forEach((item) => {
           if (item !== currentItem) {
-            item.classList.add("hidden"); // Shrink other items
-            item.classList.remove("expanded"); // Ensure they are not expanded
+            item.classList.add("hidden"); 
+            item.classList.remove("expanded"); 
           } else {
-            item.classList.remove("hidden"); // Remove hidden class
-            item.classList.add("expanded"); // Expand the current item
+            item.classList.remove("hidden");  
+            item.classList.add("expanded"); 
           }
         });
       } else {
         allItems.forEach((item) => {
-          item.classList.remove("hidden", "expanded"); // Reset all cards
+          item.classList.remove("hidden", "expanded");
         });
       }
     });
