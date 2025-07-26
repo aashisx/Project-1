@@ -621,21 +621,46 @@ function toggleFavorite(vehicleId) {
     }
 }*/
 
-// Search functionality
-document.querySelector('.search-btn').addEventListener('click', function() {
-    const location = document.getElementById('searchLocation').value;
-    const pickupDate = document.getElementById('pickupDate').value;
-    const returnDate = document.getElementById('returnDate').value;
-    
-    if (!location || !pickupDate || !returnDate) {
-        alert('Please fill in all search fields');
-        return;
+// Api in search function //
+  async function getWeather() {
+  const apiKey = '6c71b02c7af4487c9a951257252607';
+  const city = document.getElementById('searchLocation').value || 'Kathmandu';
+  const resultDiv = document.getElementById('weatherResult');
+
+  // Hide result before fetching
+  resultDiv.style.display = "none";
+
+  try {
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
     }
-    
-    console.log('Searching for vehicles:', { location, pickupDate, returnDate });
-    // Here you would typically filter vehicles based on location and dates
-    alert(`Searching for vehicles in ${location} from ${pickupDate} to ${returnDate}`);
-});
+
+    const data = await response.json();
+    const temp = data.current.temp_c;
+    const condition = data.current.condition.text;
+    const icon = "https:" + data.current.condition.icon;
+
+    resultDiv.innerHTML = `
+      <img src="${icon}" alt="Weather icon" />
+      <div class="weather-details">
+        <h3>Weather in ${city}</h3>
+        <p>Temperature: ${temp}°C</p>
+        <p>Condition: ${condition}</p>
+      </div>
+    `;
+    resultDiv.style.display = "flex"; // Show result after API
+  } catch (error) {
+    resultDiv.innerHTML = `<p style="color: red;">City not found. Please enter a valid city name.</p>`;
+    resultDiv.style.display = "block";
+  }
+  }
+
+
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
